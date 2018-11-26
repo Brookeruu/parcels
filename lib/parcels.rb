@@ -21,13 +21,15 @@ class Parcel
     distance_cost = distance * 3
   end
 
-  def parcel_cost(length, width, height, weight, distance)
-    calc_weight = cost_weight()
-    calc_distance = cost_distance()
-    calc_volume = get_volume()
-    cost = calc_weight + calc_distance
+  def parcel_cost
+    calc_weight = cost_weight
+    calc_distance = cost_distance
+    calc_volume = get_volume
+    cost = 0
+
     if calc_volume >= 30
-     cost + 5
+     cost = calc_weight + calc_distance + 5
+   else   cost = calc_weight + calc_distance
     end
   end
 end

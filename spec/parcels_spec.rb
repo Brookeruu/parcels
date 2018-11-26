@@ -19,8 +19,13 @@ describe('#parcels') do
   end
 
   it("Determine the total cost for parcel.") do
-    parcel4 = Parcel.new(5, 5, 5, 10, 20)
-    expect(parcel4.parcel_cost(5, 5, 5, 10, 20)).to(eq(85))
+    parcel4 = Parcel.new(2, 2, 2, 10, 20)
+    expect(parcel4.parcel_cost()).to(eq(80))
+  end
+
+  it("Determine the total cost for parcel with volume > 30.") do
+    parcel5 = Parcel.new(5, 5, 5, 10, 20)
+    expect(parcel5.parcel_cost()).to(eq(85))
   end
 
 
